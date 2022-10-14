@@ -32,10 +32,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context){
-    return BlocBuilder(
+    return BlocProvider(
       create: (context) => AppBloc(
         loginApi: LoginApi(),
-        notesApi: NotesApi(),
+        notesApi: NotesApi(), 
+        acceptedLoginHandle:const LoginHandle.fooBar(),
       ),
       child: Scaffold(
         appBar: AppBar(
